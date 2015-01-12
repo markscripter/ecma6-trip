@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ECMA 6 - Class</title>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+	<script src="https://traceur-compiler.googlecode.com/git/bin/traceur.js" type="text/javascript"></script>
+</head>
+<body>
+	<h1>Class Intro</h1>
+	<pre class="prettyprint">
+ class Foo () {
+
+  constructor(first, last){
+   this.firstName = first;
+   this.lastName = last;
+  }
+
+  toString(){
+   return `${this.firstName} ${this.lastName}`
+  }
+ }
+ 
+ var foo = new Foo("Mark","Scripter");	
+ console.log(foo.toString());		// outputs "Mark Scripter"
+	</pre>
+</body>	
+</html>

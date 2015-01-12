@@ -1,2 +1,4 @@
 # ecma6-trip
-Experiments and Fun with ECMA6
+This repository is the holder of my experiments with ECMA6 (Harmony). 
+
+

@@ -2,34 +2,27 @@
 
 class Foo {
  constructor(first, last){
-  this.first = first;
-  this.last = last;
+  this.firstName = first;
+  this.lastName = last;
  }
 
- getFirst(){
-  return this.first;
- }
-
- getLast(){
-  return this.last;
- }
-
- getFullname(){
-  return `${this.getFirst()} ${this.getLast()}`;
+ toString(){
+  return `${this.firstName} ${this.lastName}`;
  }
 }
+
+var foo = new Foo("mark","scripter");
 
 class Bar extends Foo {
 	constructor(first, last){
 		super(first, last);
 	}
-	getFullname(){
-		return `Your name is: ${super.getFullname()}`;
+	toString(){
+		return `Your name is: ${super.toString()}`;
 	}
 }
 
-var foo = new Foo("mark","scripter");
 var bar = new Bar("bill","workls");
 
-console.log(foo.getFullname());
-console.log(bar.getFullname());
+console.log(foo.toString());
+console.log(bar.toString());

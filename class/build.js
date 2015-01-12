@@ -1,19 +1,11 @@
 'use strict';
 var Foo = function Foo(first, last) {
-  this.first = first;
-  this.last = last;
+  this.firstName = first;
+  this.lastName = last;
 };
-($traceurRuntime.createClass)(Foo, {
-  getFirst: function() {
-    return this.first;
-  },
-  getLast: function() {
-    return this.last;
-  },
-  getFullname: function() {
-    return (this.getFirst() + " " + this.getLast());
-  }
-}, {});
+($traceurRuntime.createClass)(Foo, {getFullname: function() {
+    return (this.firstName + " " + this.lastName);
+  }}, {});
 var Bar = function Bar(first, last) {
   $traceurRuntime.superConstructor($Bar).call(this, first, last);
 };
