@@ -54,7 +54,7 @@ class TodoView {
 	render() {
 		let view = '<ul>';
 		this.model.tasks.forEach(val => {
-			view += `<li><span class="taskVal">${val}</span> <span class="deleteTask">X Delete</span></li>`;
+			view += `<li><span class="taskVal">${val}</span> <span class="deleteTask">X</span></li>`;
 		});
 		view += '</ul>';
 		this.el.innerHTML	= view;

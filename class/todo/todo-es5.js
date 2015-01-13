@@ -55,7 +55,7 @@ var TodoView = function TodoView(el) {
     "use strict";
     var view = '<ul>';
     this.model.tasks.forEach((function(val) {
-      view += ("<li><span class=\"taskVal\">" + val + "</span> <span class=\"deleteTask\">X Delete</span></li>");
+      view += ("<li><span class=\"taskVal\">" + val + "</span> <span class=\"deleteTask\">X</span></li>");
     }));
     view += '</ul>';
     this.el.innerHTML = view;

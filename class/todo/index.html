@@ -3,6 +3,48 @@
 <head>
 	<title>Todo - Class</title>
 	<script src="https://traceur-compiler.googlecode.com/git/bin/traceur.js"></script>
+	<style type="text/css">
+		button {
+			outline:none;
+			border: 1px solid #d6d6d6;
+			background: transparent;
+			padding: 5px 10px;
+			text-transform: uppercase;
+			border-radius: 5px;
+		}
+
+		.deleteTask {
+			padding:5px 10px;
+			border: 1px solid #d6d6d6;
+			border-radius: 5px;
+			font-family: sans-serif;
+		}
+
+		ul {
+			list-style:none;
+			padding:0px;
+			margin:10px 0px 0px 0px;
+		}
+		li {
+			display: block;
+			width:95%;
+			line-height: 1em;
+			padding:0px;
+			margin-bottom:10px;
+			margin-left:2.5%;
+			margin-right:2.5%;
+			clear:both;
+		}
+
+		li span {
+			display: inline-block;
+		}
+
+		span.deleteTask {
+			float:right;
+		}
+
+	</style>
 </head>
 <body>
 	<article id="todo-app">
@@ -10,7 +52,7 @@
 			<h1>TODO - Class</h1>
 		</header><!-- /header -->
 		<input type="text" id="task" />
-		<button id="addTask"></button>
+		<button id="addTask">Add Task</button>
 		<section class="todo-list">
 		</section>
 	</article>
