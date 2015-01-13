@@ -28,15 +28,41 @@ var TodoView = function TodoView(el) {
   this.el = document.querySelector(el);
   this.model = new TodoClass();
 };
-($traceurRuntime.createClass)(TodoView, {render: function() {
+($traceurRuntime.createClass)(TodoView, {
+  registerEvents: function() {
+    "use strict";
+    document.getElementById("addTask").onclick = this.handleAdd.bind(this);
+    var delTasks = document.querySelectorAll(".deleteTask");
+    for (var i = 0; i < delTasks.length; i++) {
+      delTasks[i].onclick = this.handleDelete.bind(this);
+    }
+  },
+  handleAdd: function() {
+    "use strict";
+    var el = document.querySelector('#task'),
+        inputVal = el.value;
+    this.model.add(inputVal);
+    el.value = "";
+    this.render();
+  },
+  handleDelete: function(e) {
+    "use strict";
+    var taskEl = e.currentTarget.previousElementSibling.textContent;
+    this.model.remove(taskEl);
+    this.render();
+  },
+  render: function() {
     "use strict";
     var view = '<ul>';
     this.model.tasks.forEach((function(val) {
-      view += ("<li>" + val + "</li>");
+      view += ("<li><span class=\"taskVal\">" + val + "</span> <span class=\"deleteTask\">X Delete</span></li>");
     }));
     view += '</ul>';
     this.el.innerHTML = view;
-  }}, {});
+    this.registerEvents();
+    document.getElementById('task').focus();
+  }
+}, {});
 document.onreadystatechange = function() {
   if (document.readyState === "complete") {
     var todoView = new TodoView('.todo-list');
